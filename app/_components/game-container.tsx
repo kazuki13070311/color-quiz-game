@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import ColorDisplay from "./color-display";
 import ColorOptionsGrid from "./color-options-grid";
 import GameOverDialog from "./game-over-dialog";
@@ -51,18 +52,21 @@ export default function GameContainer() {
     if (gameState === 'answered' && userChoice?.isCorrect) {
       const timer = setTimeout(() => {
         startNewRound();
-      }, 1200); // A bit longer to appreciate the green button
+      }, 1200);
       return () => clearTimeout(timer);
     }
   }, [gameState, userChoice, startNewRound]);
 
   return (
-    <div className="relative w-full flex flex-col items-center">
+    <div className="relative w-full flex flex-col items-center p-4">
       <ScoreDisplay score={score} />
-      <ColorDisplay 
-        color={correctColor} 
-        showRgbValue={gameState !== 'playing'}
-      />
+      <AnimatePresence mode="wait">
+        <ColorDisplay 
+          key={correctColor} // Re-trigger animation on new round
+          color={correctColor} 
+          showRgbValue={gameState !== 'playing'}
+        />
+      </AnimatePresence>
       <ColorOptionsGrid 
         options={options} 
         onSelectOption={handleSelectOption}

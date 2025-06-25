@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 色当てクイズゲーム (Color Guessing Quiz)
 
-## Getting Started
+表示された色のRGB値を当てる、シンプルでモダンなデザインのクイズゲームです。
 
-First, run the development server:
+## ✨ 特徴
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **モダンなUI/UX:** `shadcn/ui` と `Tailwind CSS` をベースに、グラデーション背景や洗練されたコンポーネントデザインを採用。
+- **心地よいアニメーション:** `framer-motion` を活用し、スムーズで直感的なインタラクションを実現。
+- **日本語対応:** 日本語環境に最適化されたフォント（Noto Sans JP）とUIテキスト。
+- **レスポンシブデザイン:** PCからスマートフォンまで、様々なデバイスで快適にプレイ可能。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ 技術スタック
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **フレームワーク:** Next.js (App Router)
+- **UIコンポーネント:** shadcn/ui
+- **スタイリング:** Tailwind CSS
+- **アニメーション:** Framer Motion
+- **言語:** TypeScript
+- **パッケージマネージャー:** pnpm
+- **Node.jsバージョン管理:** anyenv (nodenv)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 起動方法
 
-## Learn More
+1.  **リポジトリをクローン:**
+    ```bash
+    git clone <repository_url>
+    cd color-quiz-game
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2.  **Node.jsのバージョンを合わせる:**
+    このプロジェクトは特定のNode.jsバージョンを使用します。`anyenv` (`nodenv`) を使用している場合、ディレクトリに入るだけで自動的にバージョンが切り替わります。
+    
+    もし指定のバージョン (`.node-version` ファイルに記載) がインストールされていない場合は、以下のコマンドでインストールしてください。
+    ```bash
+    nodenv install
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3.  **依存関係をインストール:**
+    ```bash
+    pnpm install
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4.  **開発サーバーを起動:**
+    ```bash
+    pnpm dev
+    ```
 
-## Deploy on Vercel
+5.  ブラウザで `http://localhost:3000` を開いてください。
+## 📄 詳細
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+より詳細なアーキテクチャやコンポーネント設計については、以下のドキュメントを参照してください。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [詳細設計書](./docs/details.md)
+

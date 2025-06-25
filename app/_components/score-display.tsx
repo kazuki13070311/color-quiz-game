@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface ScoreDisplayProps {
   score: number;
@@ -8,9 +8,22 @@ interface ScoreDisplayProps {
 
 export default function ScoreDisplay({ score }: ScoreDisplayProps) {
   return (
-    <div className="absolute top-4 right-4 md:top-8 md:right-8 bg-card p-3 rounded-lg shadow-md">
-      <p className="text-xl font-bold">Score: 
-        <span key={score} className="font-mono inline-block animate-score-up">{score}</span>
+    <div className="absolute top-6 right-6 bg-black/20 backdrop-blur-sm p-3 px-5 rounded-full shadow-lg">
+      <p className="text-xl font-bold text-white">
+        スコア: 
+        <span className="font-mono ml-2 w-12 inline-block text-center">
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={score}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+            >
+              {score}
+            </motion.span>
+          </AnimatePresence>
+        </span>
       </p>
     </div>
   );
