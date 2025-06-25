@@ -4,6 +4,10 @@
 
 ## ✨ 特徴
 
+[![Image from Gyazo](https://i.gyazo.com/f91f7bf60fcad60c4d935db37e97a9fa.gif)](https://gyazo.com/f91f7bf60fcad60c4d935db37e97a9fa)
+
+- **モダンなUI/UX:** `shadcn/ui` と `Tailwind CSS` をベースに、グラデーション背景や洗練されたコンポーネントデザインを採用。
+
 - **モダンなUI/UX:** `shadcn/ui` と `Tailwind CSS` をベースに、グラデーション背景や洗練されたコンポーネントデザインを採用。
 - **心地よいアニメーション:** `framer-motion` を活用し、スムーズで直感的なインタラクションを実現。
 - **日本語対応:** 日本語環境に最適化されたフォント（Noto Sans JP）とUIテキスト。
